@@ -24,6 +24,9 @@
  * represents the switch matrix.
  */
 #pragma once
+//#ifndef 65_PER_H
+//#define 65_PER_H
+
 
 #include "quantum.h"
 
@@ -45,3 +48,5 @@
     { K80, K81, KC_NO, K82, K83, K84, K85   }, \
     { K90, KC_NO, K91, K92, K93, K94,  K95  }  \
 }
+
+//#endif

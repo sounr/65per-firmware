@@ -13,6 +13,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+//#ifndef CONFIG_H
+//#define CONFIG_H
 
 #pragma once
 
@@ -45,19 +47,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // RGB Lighting
 #define RGB_DI_PIN B6	//input pin for RGB
-
 #define RGBLED_NUM 10	//number of LED's connected in serial
-
-//#define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects
+//	modes
+//#define RGBLIGHT_ANIMATIONS	//adds all animations
+#define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#define RGBLIGHT_EFFECT_TWINKLE
+#define RGBLIGHT_EFFECT_BREATHING
 
 #define RGBLIGHT_HUE_STEP 10	//The number of steps to cycle through the hue by
 #define RGBLIGHT_SAT_STEP 17	//The number of steps to increment the saturation by
 #define RGBLIGHT_VAL_STEP 17	//The number of steps to increment the brightness by
-#define RGBLIGHT_LIMIT_VAL 130	//The maximum brightness level (0-255)
+#define RGBLIGHT_LIMIT_VAL 255	//The maximum brightness level (0-255)
 #define RGBLIGHT_SLEEP			//If defined, the RGB lighting will be switched off when the host goes to sleep
 
-//#define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
-#define RGBLIGHT_LED_PROCESS_LIMIT 4
+
+//#define RGBLIGHT_LED_PROCESS_LIMIT 4
 #define RGBLIGHT_LED_FLUSH_LIMIT 32
 
 #define RGBLIGHT_STARTUP_HUE 0 // Sets the default hue value, if none has been set
@@ -66,14 +71,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_STARTUP_SPD  // Sets the default animation speed, if none has been set 0-127
 
 
-//Bluetooth module
-#define AdafruitBleResetPin D7
+//SPI to Bluetooth module
+#define BATTERY_LEVEL_PIN F0
+#define AdafruitBleResetPin -1
 #define AdafruitBleCSPin    B4
 #define AdafruitBleIRQPin   E6
+//#define SPI_SCK_PIN B1
+//#define SPI_MOSI_PIN B2
+//#define SPI_MISO_PIN B3
+
+//#define AdafruitBleResetPin -1
+//#define AdafruitBleCSPin B4
+//#define AdafruitBleIRQPin C6
+//#define AdafruitBlePowerPin D2
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-//#define NO_JTAG_DISABLE ???
+//#define NO_JTAG_DISABLE
+//#endif
